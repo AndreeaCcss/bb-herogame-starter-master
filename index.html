@@ -3,14 +3,28 @@
     <meta charset="utf-8">
     <title>Mocha Tests</title>
     <link href="lib/mocha.css" rel="stylesheet" />
+    <link href="index.css" type="text/css" media="screen" rel="stylesheet" />
 </head>
 <body>
-
-
   <!-- 👍 YOUR HTML HERE 👍 -->
-  <img id="inn" onclick="rest(hero)" src="https://m.media-amazon.com/images/M/MV5BMjI1MDAwNDM4OV5BMl5BanBnXkFtZTgwNjUwNDIxNjM@._V1_UY268_CR16,0,182,268_AL_.jpg" alt="Flash">
+  <header id="header"></header>
+  <p id="stats"></p>
 
-  <img id="dagger" onclick="pickUpItem(hero, hero.weapon)" src="http://www.valyriansteel.com/shop/images/uploads/FoamCatspaw1.jpeg" alt="Dagger">
+  <img id="inn" onclick="rest(hero)" src="https://m.media-amazon.com/images/M/MV5BMjI1MDAwNDM4OV5BMl5BanBnXkFtZTgwNjUwNDIxNjM@._V1_UY268_CR16,0,182,268_AL_.jpg" alt="Flash">
+  <img id="dagger" onclick="pickUpItem(hero, weapon)" src="http://www.valyriansteel.com/shop/images/uploads/FoamCatspaw1.jpeg" alt="Dagger">
+  <img id="bag" onclick="equipWeapon(hero)" src="https://hush.images.blucommerce.com/hush/product/BAG19-BLK-01.jpg?auto=format%2Ccompress&bluhash=4f14caca48cbfd8abc4f923310a659a9&w=530&h=760&fit=fillmax&fill=solid&s=365f60e39022b5ef17d58f54f4ea29d7" alt="bag">
+
+  <form onsubmit="submitName(); return false">
+    <div class="formSection">
+        <label for="name">Your hero's name:</label>
+        <input type="text" id="name">
+    </div>
+    <div class="button">
+        <button id= "button" type="default">Submit</button>
+    </div>
+  </form>
+
+  
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 
