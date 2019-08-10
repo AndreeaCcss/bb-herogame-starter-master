@@ -17,7 +17,7 @@
   <h1 id="heroName"></h1>
   <p id="stats"></p>
 
-  <img id="inn" onclick="rest(hero)" src="https://images.halloweencostumes.com/products/41827/1-1/legend-of-zelda-link-breath-of-the-wild-mens-deluxe-costume.jpg" alt="Link">
+  <img id="inn" onclick="rest(hero)" src="https://vignette.wikia.nocookie.net/nintendo/images/b/b8/Super_Smash_Bros._Ultimate_-_Character_Art_-_Toon_Link.png/revision/latest/scale-to-width-down/310?cb=20180613031959&path-prefix=en" alt="Link">
   <img id="dagger" onclick="pickUpItem(hero, weapon)" src="http://www.valyriansteel.com/shop/images/uploads/FoamCatspaw1.jpeg" alt="Dagger">
   <img id="bag" onclick="equipWeapon(hero)" src="https://aladiniasi.com/wp-content/uploads/2019/01/IMG_1583-cufar-lemn-material-mijloc-600x720.png" alt="bag">
 
@@ -30,15 +30,16 @@
         <button class="button" type="default">Submit</button>
     </div>
   </form>
-  <button onclick="attack(enemy, hero) "class="button" id="attackButton" type="button" style="display: none;">Attack</button>
+  <button onclick="attack(enemy, hero) "class="button" id="attackButton" type="button" style="display: none;" disabled>Attack</button>
 
-  <p> Versus</p>
+  <br>
+  <hr/>
 
   <h1 id="enemyName">Ganondorf</h1>
   <p id="enemyStats"></p>
-  <button onclick="attack(hero, enemy)" class="button" id="attackButton" type="button">Attack</button>
+  <button onclick="attack(hero, enemy)" class="button" type="button">Attack</button>
   <br>
-  <img id="inn" src="http://1.media.dorkly.cvcdn.com/64/18/c2245b11356b1144956d85370ac59d2e.jpg" alt="Ganondorf">
+  <img id="inn" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d9fe992a-9651-4732-b498-64a46229c8b3/d5rwmec-0b986792-290f-4db1-9642-d46ed7086902.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q5ZmU5OTJhLTk2NTEtNDczMi1iNDk4LTY0YTQ2MjI5YzhiM1wvZDVyd21lYy0wYjk4Njc5Mi0yOTBmLTRkYjEtOTY0Mi1kNDZlZDcwODY5MDIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cPR7f-iC4paycxdUuOWkJaxYBa3slavbOmFLwWi9uic" alt="Ganondorf">
   <img id="sword" src="http://cdn.shopify.com/s/files/1/0006/6060/2935/products/gotjclngclw_1_1200x1200.jpg?v=1530613454" alt="sword">
 
   <br>

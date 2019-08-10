@@ -19,9 +19,15 @@ img {
     height: 100px;
     width: 100px;
 }
+
+#inn, #dagger, #bag {
+    cursor: pointer;
+}
+
 form {
     margin-left: 2em
 }
+
 .formSection {
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -46,9 +52,16 @@ input {
     color: #ffffff;
     background-color: black;
     cursor: pointer;
-    /* display: */
 }
 
 #attackButton {
     margin: 0 auto;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: auto;
 }

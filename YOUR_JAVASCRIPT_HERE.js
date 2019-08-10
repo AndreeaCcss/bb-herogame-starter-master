@@ -38,12 +38,17 @@ function equipWeapon(hero) {
     } else {
         hero.weapon = hero.inventory[0];
     }
+
+    let attackButton = document.getElementById("attackButton");
+    attackButton.removeAttribute("disabled")
+
     displayStats();
 }
 
 function displayStats() {
     let stats = document.getElementById("stats");
-    stats.textContent = `Hero name: ${hero.name}, Health: ${hero.health}, Weapon type: ${hero.weapon.type}, Weapon damage: ${hero.weapon.damage}`
+
+    stats.textContent = `Hero name: ${hero.name}, Health: ${getHealth(hero)}, Weapon type: ${hero.weapon.type}, Weapon damage: ${hero.weapon.damage}`
 }
 
 function submitName() {
@@ -67,8 +72,7 @@ function submitName() {
     attackButton.style.display = "inherit"
 
     inputField.value = null;
-};
-
+}
 
 function doesNotPassAllValidations (name) { 
     if (!name) {
@@ -84,28 +88,41 @@ const enemy = {
     health: 10,
     weapon: { 
         type: "sword",
-        damage: 2
+        damage: 8
     }
 }
 
-function attack(attacker, victim) {
-    if (attacker.health > 0){
-        attacker.health = attacker.health - victim.weapon.damage;
-    } else {
-        attacker.health = "Dead";
-    }
-    if(victim.health === "Dead") {
+function attack(victim, attacker) {
+    if(attacker.health === 0) {
         alert("You can't attack if you're dead");
         return null;
+    };
+
+    if (victim.health > 0){
+        const healthAfterAttack = victim.health - attacker.weapon.damage;
+        victim.health = Math.max(healthAfterAttack, 0);
+    } else {
+        alert("He's dead already");
+        return null;
     }
+
     displayEnemyStats();
     displayStats();
 }
 
 function displayEnemyStats() {
-    let enemyStats = document.getElementById("enemyStats");
-    enemyStats.textContent = `Enemy name: ${enemy.name}, Health: ${enemy.health}, Weapon type: ${enemy.weapon.type}, Weapon damage: ${enemy.weapon.damage}`
+    let enemyStats = document.getElementById("enemyStats");    
+    enemyStats.textContent = `Enemy name: ${enemy.name}, Health: ${getHealth(enemy)}, Weapon type: ${enemy.weapon.type}, Weapon damage: ${enemy.weapon.damage}`
 }
 
-displayEnemyStats()
-displayStats()
+function getHealth(subject) {
+    if(subject.health === 0) {
+        return "Dead";
+    } else {
+        return subject.health;
+
+    }
+}
+
+displayEnemyStats();
+displayStats();
