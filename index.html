@@ -7,23 +7,43 @@
 </head>
 <body>
   <!-- 👍 YOUR HTML HERE 👍 -->
-  <header id="header"></header>
+  <div>
+    <h2 class="instructions">Instructions </h2>  
+    <p class="instructions">Click on weapon to add it to your inventory</p>
+    <p class="instructions">Click on chest to pick the weapon from inventory</p>
+    <p class="instructions">Submit your hero's name to begin attack</p>
+    <p class="instructions">Click on hero to restore health</p>
+  </div>
+  <h1 id="heroName"></h1>
   <p id="stats"></p>
 
-  <img id="inn" onclick="rest(hero)" src="https://m.media-amazon.com/images/M/MV5BMjI1MDAwNDM4OV5BMl5BanBnXkFtZTgwNjUwNDIxNjM@._V1_UY268_CR16,0,182,268_AL_.jpg" alt="Flash">
+  <img id="inn" onclick="rest(hero)" src="https://images.halloweencostumes.com/products/41827/1-1/legend-of-zelda-link-breath-of-the-wild-mens-deluxe-costume.jpg" alt="Link">
   <img id="dagger" onclick="pickUpItem(hero, weapon)" src="http://www.valyriansteel.com/shop/images/uploads/FoamCatspaw1.jpeg" alt="Dagger">
-  <img id="bag" onclick="equipWeapon(hero)" src="https://hush.images.blucommerce.com/hush/product/BAG19-BLK-01.jpg?auto=format%2Ccompress&bluhash=4f14caca48cbfd8abc4f923310a659a9&w=530&h=760&fit=fillmax&fill=solid&s=365f60e39022b5ef17d58f54f4ea29d7" alt="bag">
+  <img id="bag" onclick="equipWeapon(hero)" src="https://aladiniasi.com/wp-content/uploads/2019/01/IMG_1583-cufar-lemn-material-mijloc-600x720.png" alt="bag">
 
-  <form onsubmit="submitName(); return false">
+  <form onsubmit="submitName(); return false" id="form">
     <div class="formSection">
         <label for="name">Your hero's name:</label>
         <input type="text" id="name">
     </div>
-    <div class="button">
-        <button id= "button" type="default">Submit</button>
+    <div>
+        <button class="button" type="default">Submit</button>
     </div>
   </form>
+  <button onclick="attack(enemy, hero) "class="button" id="attackButton" type="button" style="display: none;">Attack</button>
 
+  <!-- <br> -->
+
+  <p> Versus</p>
+
+  <h1 id="enemyName">Ganondorf</h1>
+  <p id="enemyStats"></p>
+  <button onclick="attack(hero, enemy)" class="button" id="attackButton" type="button">Attack</button>
+  <br>
+  <img id="inn" src="http://1.media.dorkly.cvcdn.com/64/18/c2245b11356b1144956d85370ac59d2e.jpg" alt="Ganondorf">
+  <img id="sword" src="http://cdn.shopify.com/s/files/1/0006/6060/2935/products/gotjclngclw_1_1200x1200.jpg?v=1530613454" alt="sword">
+
+  <br>
   
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>

@@ -1,11 +1,23 @@
-header {
-    font-size: 20px,
+body {
+    padding: 2em;
+    font-size: 20px;
+    margin: 0;
+    padding: 2rem 0;
+    width: 100%;
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
 }
+.instructions {
+    font-size: 15px;
+    text-align: left;
+    margin-left: 2em;
+    line-height: 0.1
 
+}
 img {
     margin-top: 30px;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
 }
 form {
     margin-left: 2em
@@ -23,7 +35,7 @@ input {
     font-size: 1.2rem;
 }
 
-#button {
+.button {
     padding: 0;
     font: inherit;
     color: inherit;
@@ -33,4 +45,10 @@ input {
     padding: 0.5rem 1rem;
     color: #ffffff;
     background-color: black;
+    cursor: pointer;
+    /* display: */
+}
+
+#attackButton {
+    margin: 0 auto;
 }

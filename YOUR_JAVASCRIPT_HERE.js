@@ -16,10 +16,12 @@ const weapon = {
 
 function rest(hero) {
     if(hero.health == 10) {
-        alert("Health is already 10");
+        alert("Health is up to 10");
     } else {
         hero.health = 10;
     }
+    console.log(hero.health)
+
     return hero;
 }
 
@@ -54,10 +56,16 @@ function submitName() {
     };
     name = name.charAt(0).toUpperCase() + name.slice(1);
 
-    let header = document.getElementById("header");
-    header.textContent = `${name}`;
+    let h1 = document.getElementById("heroName");
+    h1.textContent = `${name}`;
     hero.name = name;
     displayStats();
+
+    const form = document.getElementById("form");
+    form.style.display = "none";
+
+    const attackButton = document.getElementById("attackButton");
+    attackButton.style.display = "inherit"
 
     inputField.value = null;
 };
@@ -72,4 +80,29 @@ function doesNotPassAllValidations (name) {
     }
 }
 
+const enemy = {
+    name: "Ganondorf",
+    health: 10,
+    weapon: { 
+        type: "sword",
+        damage: 2
+    }
+}
+
+function attack(attacker, victim) {
+    if (attacker.health > 0){
+        attacker.health = attacker.health - victim.weapon.damage;
+    } else {
+        attacker.health = "Dead";
+    }
+    displayEnemyStats();
+    displayStats();
+}
+
+function displayEnemyStats() {
+    let enemyStats = document.getElementById("enemyStats");
+    enemyStats.textContent = `Enemy name: ${enemy.name}, Health: ${enemy.health}, Weapon type: ${enemy.weapon.type}, Weapon damage: ${enemy.weapon.damage}`
+}
+
+displayEnemyStats()
 displayStats()
