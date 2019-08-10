@@ -20,8 +20,7 @@ function rest(hero) {
     } else {
         hero.health = 10;
     }
-    console.log(hero.health)
-
+    displayStats();
     return hero;
 }
 
@@ -94,6 +93,10 @@ function attack(attacker, victim) {
         attacker.health = attacker.health - victim.weapon.damage;
     } else {
         attacker.health = "Dead";
+    }
+    if(victim.health === "Dead") {
+        alert("You can't attack if you're dead");
+        return null;
     }
     displayEnemyStats();
     displayStats();
